@@ -1,3 +1,10 @@
 from django.db import models
 
-# Create your models here.
+class Tweet(models.Model):
+    text = models.CharField(max_length=200)
+    date = models.DateTimeField()
+    query_string = models.CharField(max_length=200)
+    candidate = models.CharField(max_length=200)
+
+
+
