@@ -18,4 +18,4 @@ class IndexView(View):
         	candidate_dict[candidate] = score
         print(candidate_dict)
 
-        return render(request, self.template)
+        return render(request, self.template, )
