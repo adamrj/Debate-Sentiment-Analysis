@@ -1,0 +1,13 @@
+#bar_chart {
+	left:10em;
+	top:5em;
+	position: relative;
+}
+
+.yaxis path {
+	fill: none;
+    stroke: #000000;
+    shape-rendering: crispEdges;
+}
+
+
