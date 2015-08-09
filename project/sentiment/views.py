@@ -86,4 +86,18 @@ class TweetView(View):
 				return JsonResponse({"tweet": tweet.text, "score": tweet.score, "date": tweet.date})
 		return JsonResponse({"tweet": "No Tweet found"})
 
+
+class ThirdView(View):
+    template = 'sentiment/third.html'
+    candidate_list = ["Trump", "Bush", "Walker", "Huckabee", "Carson", "Cruz", "Rubio", "Paul", "Christie", "Kasich"]
+
+    def get(self, request):
+        return render(request, self.template, {'candidates': self.candidate_list})
+
+
+class DotChartView(View):
+
+	def get(self,request):
+		pass
+
   

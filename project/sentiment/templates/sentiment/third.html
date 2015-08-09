@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+{% load staticfiles %}
+<head>
+    <title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://getbootstrap.com/examples/justified-nav/justified-nav.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href ="{% static 'sentiment/main.css' %}">
+<script src="{% static 'sentiment/dot_chart.js' %}"> </script>
+</head>
+ 
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <svg id="visualisation" width="1000" height="500"></svg>
+        </div>
+    </div> 
+
+    <div id ="buttons" style ="width:800px; margin:0 auto">
+        {%if candidates%}
+            {%for candidate in candidates%}
+                <button class="btn btn-primary candidate_buttons" id="{{candidate}}">{{ candidate }}</button>
+            {%endfor%}
+        {%endif%}
+    </div>
+
+
+</body>
+ 
+</html>
