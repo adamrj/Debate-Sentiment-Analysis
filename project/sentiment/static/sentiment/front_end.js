@@ -24,24 +24,21 @@ $( document ).ready(function() {
 
       //Create SVG element
       
-      // var yScale = d3.scale.linear()
-    		// .domain([0, 120])
-    		// .range([0, h]);
+      var yScale = d3.scale.linear()
+    		.domain([0, 1])
+    		.range([h, 0]);
 
-    var yScale = d3.scale.linear().range([h, 0]);
+      // var yScale = d3.scale.linear();
+      // yScale.range([0, h]);
 
-      var yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(10)
+
+      var yAxis = d3.svg.axis().scale(yScale).orient("right").ticks(10);
  
 
       var svg = d3.select("#bar_chart")
             .append("svg")
-            .attr("class","axis")
-            .attr("width", w)
-            .attr("height", h)
-           .append("g")
-           	.attr("class","yaxis")
-            .call(yAxis);
-
+              .attr("width", w)
+              .attr("height", h);
 
 
       svg.selectAll("rect")
@@ -81,9 +78,9 @@ $( document ).ready(function() {
          })
          .attr("font-family", "sans-serif")
          .attr("font-size", "11px")
-         .attr("fill", "white")
+         .attr("fill", "white");
 
-         svg.selectAll("text2")
+      svg.selectAll("text2")
          .data(dataset2)
          .enter()
          .append("text")
@@ -100,33 +97,30 @@ $( document ).ready(function() {
          })
          .attr("font-family", "sans-serif")
          .attr("font-size", "11px")
-         .attr("fill", "white")
+         .attr("fill", "white");
 
          /// Creating a header
-       	 svg.append("text")             
+      svg.append("text")             
 	        .attr("x", 300 )
 	        .attr("y",  50 )
 	        .style("text-anchor", "middle")
 	        .text("Candidate sentiment score")
 	        .attr("font-size", "40px")
-	        .attr("font-family", "Verdana")
+	        .attr("font-family", "Verdana");
 
-	     svg.append("text")             
+	    svg.append("text")             
 	        .attr("x", 300 )
 	        .attr("y",  50 )
 	        .style("text-anchor", "middle")
 	        .text("Candidate sentiment score")
 	        .attr("font-size", "40px")
-	        .attr("font-family", "Verdana")
+	        .attr("font-family", "Verdana");
 
-	     svg.append("text")
-	     	.attr("x", -2*h/3 - 20 )
-	        .attr("y", 30)
-	        .style("text-anchor", "middle")
-	        .text("Score(0-1)")
-	        .attr("font-size", "15px")
-	        .attr("font-family", "Verdana")
-	        .attr("transform","rotate(-90)");
+      svg.append("g")
+        .attr("class","yaxis")
+        .attr("transform", "translate(10,20)")
+        .call(yAxis);
+
 
     })
 
