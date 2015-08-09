@@ -21,15 +21,15 @@ class BarChartView(View):
 		for candidate in self.candidate_list:
 			score = Tweet.objects.filter(candidate = candidate).aggregate(Avg('score'))
 			candidate_dict[candidate] = score
-		print(candidate_dict)
 		return JsonResponse({"candidates":candidate_dict})
 
 
 class SecondView(View):
     template = 'sentiment/second.html'
-  
+    candidate_list = ["Trump", "Bush", "Walker", "Huckabee", "Carson", "Cruz", "Rubio", "Paul", "Christie", "Kasich"]
+
     def get(self, request):
-        return render(request, self.template)
+        return render(request, self.template, {'candidates': self.candidate_list})
 
 
 
@@ -39,7 +39,6 @@ class LineChartView(View):
 	def get(self,request):
 		candidate_dict = {}
 		for candidate in self.candidate_list:
-			print(candidate)
 			tweets = Tweet.objects.filter(candidate = candidate)
 			### Create list of all times
 			tweet_time_list = {}
@@ -67,6 +66,24 @@ class LineChartView(View):
 			candidate_dict[candidate] = rolling_average_list
 		return JsonResponse({"candidates":candidate_dict})
        	
+class TweetView(View):
 
+	def get(self, request):
+		print('in tweet')
+		time = int(float(request.GET.get('time')))
+		candidate = request.GET.get('candidate')
+		rating = float(request.GET.get('rating'))
+		# print(time)
+		tweets = Tweet.objects.filter(candidate=candidate)
+		# print(tweets.count())
+		# print(tweets[0].date)
+		# print(tweets[0].date.hour)
+		# print(tweets[0].date.minute)
+		for tweet in tweets:
+			print(time)
+			print(tweet.date.hour* 60 + tweet.date.minute)
+			if tweet.date.hour * 60 + tweet.date.minute in range(time-5,time+5) and rating -0.05 < tweet.score < rating + 0.05 :
+				return JsonResponse({"tweet": tweet.text, "score": tweet.score, "date": tweet.date})
+		return JsonResponse({"tweet": "No Tweet found"})
 
   
