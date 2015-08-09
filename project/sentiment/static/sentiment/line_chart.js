@@ -75,12 +75,27 @@ $( document ).ready(function() {
 			})
 
 		})
+
+		$("path").on("mouseover", function() {
+        d3.select(this)
+          .attr("opacity", "0.5");
+		});
+
+
+		$("path").on("mouseout", function() {
+        d3.select(this)
+          .attr("opacity", "1");
+		});
+
+
 	})
 	
 	$(".candidate_buttons").on("click", function() {
 		var ID = $(this).attr("id")
 		$("."+ID).toggle()
 	})
+
+
 
 
 });
