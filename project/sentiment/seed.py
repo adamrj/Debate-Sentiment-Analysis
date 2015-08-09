@@ -1,4 +1,5 @@
-# from sentiment.secret import * (pull in API credentials)
+# from sentiment.secret import * (pull in API credentials
+
 from twython import Twython
 from sentiment.models import Tweet
 import time
@@ -22,3 +23,6 @@ def seed(query, starting_max_id, ending_max_id, count, number_of_queries):
                     except:
                         continue
         starting_max_id += iteration
+
+
+# seed("debate", 629452823560347648, 629491823560347648, 100, 160)
