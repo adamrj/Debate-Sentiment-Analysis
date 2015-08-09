@@ -1,13 +1,18 @@
 #bar_chart {
-	left:10em;
-	top:5em;
-	position: relative;
+    left:10em;
+    top:5em;
+    position: relative;
 }
 
-.yaxis path {
-	fill: none;
-    stroke: #000000;
+.yaxis path,
+.yaxis line {
+    fill: none;
+    stroke: black;
     shape-rendering: crispEdges;
 }
 
+.yaxis text {
+    font-family: sans-serif;
+    font-size: 11px;
+}
 
