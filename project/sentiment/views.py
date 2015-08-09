@@ -81,7 +81,7 @@ class TweetView(View):
 		# print(tweets[0].date.minute)
 		for tweet in tweets:
 			print(time)
-			print(tweet.date.hour* 60 + tweet.date.minute)
+			print(tweet.date.hour * 60 + tweet.date.minute)
 			if tweet.date.hour * 60 + tweet.date.minute in range(time-5,time+5) and rating -0.05 < tweet.score < rating + 0.05 :
 				return JsonResponse({"tweet": tweet.text, "score": tweet.score, "date": tweet.date})
 		return JsonResponse({"tweet": "No Tweet found"})
@@ -98,6 +98,12 @@ class ThirdView(View):
 class DotChartView(View):
 
 	def get(self,request):
-		pass
+		all_tweets = Tweet.objects.all()
+		list_tweets = []
+		for tweet in all_tweets:
+			time = tweet.date.hour * 60 + tweet.date.minute 
+			list_tweets.append({"text":tweet.text, "time":time,"score":tweet.score,"candidate":tweet.candidate})
+
+		return JsonResponse({"all_tweets":list_tweets})
 
   

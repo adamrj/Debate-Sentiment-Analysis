@@ -87,13 +87,15 @@ $( document ).ready(function() {
           .attr("opacity", "1");
 		});
 
-
-	})
-	
-	$(".candidate_buttons").on("click", function() {
+		$(".candidate_buttons").on("click", function() {
 		var ID = $(this).attr("id")
 		$("."+ID).toggle()
 	})
+
+
+	})
+	
+	
 
 
 
