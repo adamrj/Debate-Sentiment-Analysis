@@ -12,10 +12,22 @@ class IndexView(View):
     candidate_list = ["Trump", "Bush", "Walker", "Huckabee", "Carson", "Cruz", "Rubio", "Paul", "Christie", "Kasich"]
   
     def get(self, request):
-        candidate_dict = {}
-        for candidate in self.candidate_list:
-        	score = Tweet.objects.filter(candidate = candidate).aggregate(Avg('score'))
-        	candidate_dict[candidate] = score
-        print(candidate_dict)
+       
 
-        return render(request, self.template, )
+        return render(request, self.template)
+
+
+class BarChartView(View):
+	candidate_list = ["Trump", "Bush", "Walker", "Huckabee", "Carson", "Cruz", "Rubio", "Paul", "Christie", "Kasich"]
+
+	def get(self,request):
+		candidate_dict = {}
+		for candidate in self.candidate_list:
+			score = Tweet.objects.filter(candidate = candidate).aggregate(Avg('score'))
+			candidate_dict[candidate] = score
+		print(candidate_dict)
+		return JsonResponse({"candidates":candidate_dict})
+       	
+
+
+  
