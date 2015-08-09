@@ -58,3 +58,4 @@ docs/_build/
 target/
 
 project/sentiment/secret.py
+project/sentiment/sentiment_dataset.csv

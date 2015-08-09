@@ -1,9 +1,24 @@
 <!DOCTYPE html>
 <html>
+{% load staticfiles %}
 <head>
     <title></title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+<script src="{% static 'sentiment/front_end.js' %}"> </script>
+<script src="{% static 'sentiment/front_end_adam.js' %}"> </script>
 </head>
 <body>
 this is the index for sentiment app
+<div id="eddy"> 
+
+</div>
+
+<div id="adam"> 
+
+</div>
+
+
 </body>
+
 </html>
