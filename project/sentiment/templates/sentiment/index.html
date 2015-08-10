@@ -5,14 +5,17 @@
     <title></title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+<link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://getbootstrap.com/examples/justified-nav/justified-nav.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href ="{% static 'sentiment/main.css' %}">
 <script src="{% static 'sentiment/front_end.js' %}"> </script>
 </head>
 <body>
 
 <div id="bar_chart"> </div>
-<a href="{% url 'sentiment:second' %}">Next</a>
-
+<div class="nav">
+    <a href="{% url 'sentiment:second' %}">Next</a>
+</div>
 
 </body>
 

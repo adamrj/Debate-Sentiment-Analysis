@@ -4,6 +4,11 @@
     position: relative;
 }
 
+.nav {
+    position: relative;
+
+}
+
 .yaxis path,
 .yaxis line {
     fill: none;
@@ -24,5 +29,45 @@
     background-color: red;
 }
 
+#Bush {
+    border-color: purple;
+    background-color: purple;
+}
+
+#Walker {
+    border-color: black;
+    background-color: black;
+}
+
+#Huckabee {
+    color: black;
+    border-color: yellow;
+    background-color: yellow;
+}
+#Carson {
+    border-color: blue;
+    background-color: blue;
+}
+#Cruz {
+    border-color: grey;
+    background-color: grey;
+}
+#Rubio {
+    border-color: orange;
+    background-color: orange;
+}
+
+#Paul {
+    border-color: brown;
+    background-color: brown;
+}
+#Christie {
+    border-color: pink;
+    background-color: pink;
+}
+#Kasich {
+    border-color: green;
+    background-color: green;
+}
 
 
