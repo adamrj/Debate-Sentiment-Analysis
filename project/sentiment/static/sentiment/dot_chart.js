@@ -74,7 +74,7 @@ $( document ).ready(function() {
 	   	var candidate = d[3]
 	   	var tweet = d[2]
 	   	var score = d[1]
-	   	$("#tweet").html("<p>"+candidate+"</p> <p>" + tweet + "</p> <p>" + score + "</p>")
+	   	$("#tweet").html("<p>Candidate: "+candidate+"</p> <p>" + tweet + "</p> <p>Sentiment score: " + score + "</p>")
 	   })
 
 
