@@ -4,7 +4,7 @@
     position: relative;
 }
 
-a, svg {
+a, svg, .btn{
     font-family: 'Bangers', cursive;
 
 }
@@ -29,6 +29,11 @@ a {
 .yaxis text {
     font-family: sans-serif;
     font-size: 11px;
+}
+
+.btn:hover {
+    opacity: .75;
+
 }
 
 #tweet {
