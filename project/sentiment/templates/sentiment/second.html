@@ -3,6 +3,7 @@
 {% load staticfiles %}
 <head>
     <title></title>
+<link href='http://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
 <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,7 +18,7 @@
             <svg id="visualisation" width="1000" height="500"></svg>
         </div>
     </div> 
-
+    <div id = "tweet" style ="width:800px; margin:0 auto"></div>
     <div id ="buttons" style ="width:800px; margin:0 auto">
         {%if candidates%}
             {%for candidate in candidates%}
@@ -25,7 +26,10 @@
             {%endfor%}
         {%endif%}
     </div>
-
+    <div class = "nav" style ="width:220px; margin:0 auto">
+        <a href="{% url 'sentiment:index' %}">Back</a>
+        <a href="{% url 'sentiment:third' %}">Next</a>
+    </div>
 
 </body>
  

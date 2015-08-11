@@ -72,6 +72,7 @@ $( document ).ready(function() {
 			console.log(rating)
 			$.getJSON("/sentiment/tweet", {"time": time, "candidate": candidate, "rating": rating}, function(data) {
 				console.log(data)
+                $("#tweet").empty().append("<p>" + data.tweet + "</p>")
 			})
 
 		})

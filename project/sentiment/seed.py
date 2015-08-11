@@ -4,13 +4,13 @@
 from twython import Twython
 from sentiment.models import Tweet
 import time
-from sentiment.bayes import bayes_analysis
+from sentiment.bayes import bayes_analysis, training_model
 
 candidate_list = ["Trump", "Bush", "Walker", "Huckabee", "Carson", "Cruz", "Rubio", "Paul", "Christie", "Kasich"]
 
 bayes_analysis("hello",2,1)
 
-def seed(query, starting_max_id, ending_max_id, count, number_of_queries):
+def seed_tweets(query, starting_max_id, ending_max_id, count, number_of_queries):
     positive_tweets = 790178
     negative_tweets = 788437
     id_range = ending_max_id - starting_max_id
@@ -33,3 +33,10 @@ def seed(query, starting_max_id, ending_max_id, count, number_of_queries):
 
 
 # seed("debate", 629452823560347648, 629491823560347648, 100, 175)
+
+def seed_words():
+    sentiment_dictionary = training_model()
+    for word in sentiment_dictionary:
+        print("Word" + word)
+        new_word = Word(word = word, positive = sentiment_dictionary[word][0], negative = sentiment_dictionary[word][1])
+        new_word.save()

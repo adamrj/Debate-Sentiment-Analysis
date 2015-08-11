@@ -4,6 +4,21 @@
     position: relative;
 }
 
+a, svg, .btn{
+    font-family: 'Bangers', cursive;
+
+}
+
+a {
+    font-size: 18pt;
+}
+
+.nav {
+    position: relative;
+    bottom: 20%;
+
+}
+
 .yaxis path,
 .yaxis line {
     fill: none;
@@ -11,12 +26,19 @@
     shape-rendering: crispEdges;
 }
 
-
-
-
 .yaxis text {
     font-family: sans-serif;
     font-size: 11px;
+}
+
+.btn:hover {
+    opacity: .75;
+
+}
+
+#tweet {
+    font-family: 'Bangers', cursive;
+    font-size: 18pt;
 }
 
 #Trump {
@@ -24,5 +46,45 @@
     background-color: red;
 }
 
+#Bush {
+    border-color: purple;
+    background-color: purple;
+}
+
+#Walker {
+    border-color: black;
+    background-color: black;
+}
+
+#Huckabee {
+    color: black;
+    border-color: yellow;
+    background-color: yellow;
+}
+#Carson {
+    border-color: blue;
+    background-color: blue;
+}
+#Cruz {
+    border-color: grey;
+    background-color: grey;
+}
+#Rubio {
+    border-color: orange;
+    background-color: orange;
+}
+
+#Paul {
+    border-color: brown;
+    background-color: brown;
+}
+#Christie {
+    border-color: pink;
+    background-color: pink;
+}
+#Kasich {
+    border-color: green;
+    background-color: green;
+}
 
 

@@ -4,15 +4,6 @@ from sentiment.models import Word, Tweet
 
 alphabet="abcdefghijklmnopqrstuvxwyz "
 
-test_string = "Donald Trump's bitter, mysogynistic fight with Fox News's Megyn Kelly, explained"
-
-test_string2 = "Carly Fiorina Easily Wins Early GOP Debate"
-
-test_string3 = "GOP's sleeper candidate John Kasich seeks to build off of debate performance"
-
-test_string4 = "Hey @realDonaldTrump, you don't have to take this crap from the @FoxNews wing of the GOP. After debate season's over, run as an independent!"
-
-
 def string_tokenizer(string):
 	lower_string = string.lower()
 	new_string = ''
@@ -57,16 +48,6 @@ def training_model():
 	# return sentiment_dictionary
 	return positive_counter, negative_counter
 
-def seed_database():
-	sentiment_dictionary = training_model()
-	for word in sentiment_dictionary:
-		print("Word" + word)
-		new_word = Word(word = word, positive = sentiment_dictionary[word][0], negative = sentiment_dictionary[word][1])
-		new_word.save()
-
-
-
-# training_model()
 
 def bayes_analysis(tweet,positive_tweets,negative_tweets):
 	
@@ -84,19 +65,9 @@ def bayes_analysis(tweet,positive_tweets,negative_tweets):
 
 			probability_in_positive = sentiment_word[0].positive / positive_tweets
 			probability_in_negative = sentiment_word[0].negative / negative_tweets
-			
-	
 			prob_pos = probability_in_positive * prob_pos / (probability_in_positive * prob_pos + probability_in_negative * (1-prob_pos))
+	
 	return prob_pos
-
-
-
-
-#analysis
-# bayes_analysis(test_string)
-# bayes_analysis(test_string2)
-# bayes_analysis(test_string3)
-# bayes_analysis(test_string4)
 
 
 
