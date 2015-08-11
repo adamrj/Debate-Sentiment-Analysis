@@ -76,6 +76,8 @@ $( document ).ready(function() {
 
 		})
 
+		
+
 		$("path").on("mouseover", function() {
         d3.select(this)
           .attr("opacity", "0.5");
