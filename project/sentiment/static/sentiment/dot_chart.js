@@ -25,11 +25,6 @@ $( document ).ready(function() {
 	var w = 1200;
 	var h = 500;
 	
-	// var dataset = [
-	// 				[43, 0.6958,"hello","Bush"], [43, 0.6958,"hello","Bush"], [43, 0.6958,"hello","Bush"], [43, 0.6958,"hello","Bush"], [43, 0.6958,"hello","Bush"],
-	// 				[43, 0.6958,"hello","Bush"], [43, 0.6958,"hello","Bush"], [43, 0.6958,"hello","Bush"], [43, 0.6958,"hello","Bush"], [220, 88,"hello","Bush"]
-	// 			  ];
-
 	//Create scale functions
 	var xScale = d3.scale.linear()
 						 .domain([0, d3.max(dataset, function(d) { return d[0]; })])
